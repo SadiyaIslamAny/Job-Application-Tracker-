@@ -123,4 +123,44 @@ function renderCards() {
   }
 
   emptyState.classList.add('hidden');
+
+   container.innerHTML = filtered
+    .map(job => {
+      const interviewSelected = job.status === 'interview' ? 'selected' : '';
+      const rejectedSelected = job.status === 'rejected' ? 'selected' : '';
+
+      return `
+      <div class="job-card bg-white p-5 rounded shadow border border-gray-200" id="card-${job.id}">
+        <div class="flex justify-between">
+          <div>
+            <h3 class="font-semibold text-gray-800">${job.company}</h3>
+            <p class="text-sm text-gray-600">${job.role}</p>
+            <p class="text-sm text-gray-500">${job.location} • ${job.type} • ${job.salary}</p>
+          </div>
+          <button
+            class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-gray-400 hover:bg-red-100 hover:text-red-500 transition-colors"
+            title="Delete"
+            onclick="deleteJob(${job.id})">
+            <img class="w-5 h-5 bg[#64748B]" src="delete.png" alt="delete">
+          </button>
+        </div>
+        <div class="mt-3">
+          <span class="status-badge ${getStatusBadgeClass(job.status)}">${getStatusLabel(job.status)}</span>
+          <p class="text-sm text-gray-600 mt-2">${job.description}</p>
+        </div>
+        <div class="mt-4 flex gap-3">
+          <button
+            class="btn-interview ${interviewSelected} border border-green-500 text-green-600 px-3 py-1 rounded font-medium hover:bg-green-50"
+            onclick="setStatus(${job.id}, 'interview')">
+            INTERVIEW
+          </button>
+          <button
+            class="btn-rejected ${rejectedSelected} border border-red-500 text-red-600 px-3 py-1 rounded font-medium hover:bg-red-50"
+            onclick="setStatus(${job.id}, 'rejected')">
+            REJECTED
+          </button>
+        </div>
+      </div>`;
+    })
+    .join('');
   }
