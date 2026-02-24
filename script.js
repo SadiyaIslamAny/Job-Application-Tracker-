@@ -102,4 +102,25 @@ function getStatusLabel(status) {
 function renderCards() {
   const container = document.getElementById('cards-container');
   const emptyState = document.getElementById('empty-state');
+
+  const filtered = jobs.filter(job => {
+    if (currentTab === 'all') return true;
+    return job.status === currentTab;
+  });
+
+  const total = jobs.length;
+  const count = jobs.filter(j => j.status !== 'not applied').length;
+
+  const displayCount = currentTab === 'all' ? count : filtered.length;
+
+  document.getElementById('jobs-count-label').textContent =
+    `${total} jobs`;
+
+  if (filtered.length === 0) {
+    container.innerHTML = '';
+    emptyState.classList.remove('hidden');
+    return;
+  }
+
+  emptyState.classList.add('hidden');
   }
