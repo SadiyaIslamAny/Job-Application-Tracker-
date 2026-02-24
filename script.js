@@ -208,7 +208,7 @@ function deleteJob(id) {
   renderCards();
 }
 
-function allTab(tab) {
+function switchTab(tab) {
   currentTab = tab;
   updateTabStyles();
   renderCards();
