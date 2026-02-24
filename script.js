@@ -1,6 +1,6 @@
 const jobs = [
   {
-    // card 1
+    id: 1,
     company: 'Mobile First Corp',
     role: 'React Native Developer',
     location: 'Remote',
@@ -10,7 +10,7 @@ const jobs = [
     status: 'not applied',
   },
   {
-    // card 2
+    id: 2,
     company: 'WebFlow Agency',
     role: 'Web Designer & Developer',
     location: 'Los Angeles, CA',
@@ -20,7 +20,7 @@ const jobs = [
     status: 'not applied',
   },
   {
-    // card 3
+    id: 3,
     company: 'DataViz Solutions',
     role: 'Data Visualization Specialist',
     location: 'Boston, MA',
@@ -31,7 +31,7 @@ const jobs = [
     status: 'not applied',
   },
   {
-    //  card 4
+    id: 4,
     company: 'CloudScale Inc',
     role: 'Backend Developer',
     location: 'Seattle, WA',
@@ -41,7 +41,7 @@ const jobs = [
     status: 'not applied',
   },
   {
-    // card 5
+    id: 5,
     company: 'Innovation Labs',
     role: 'UI/UX Engineer',
     location: 'Austin, TX',
@@ -51,7 +51,7 @@ const jobs = [
     status: 'not applied',
   },
   {
-    // card 6
+    id: 6,
     company: 'MegaCorp Solutions',
     role: 'JavaScript Developer',
     location: 'New York, NY',
@@ -61,7 +61,7 @@ const jobs = [
     status: 'not applied',
   },
   {
-    // card 7
+    id: 7,
     company: 'Startup XYZ',
     role: 'Full Stack Engineer',
     location: 'Remote',
@@ -71,7 +71,7 @@ const jobs = [
     status: 'not applied',
   },
   {
-    // card 8
+    id: 8,
     company: 'TechCorp Industries',
     role: 'Senior Frontend Developer',
     location: 'Remote',
